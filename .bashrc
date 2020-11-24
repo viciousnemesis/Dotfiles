@@ -111,4 +111,4 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-alias config='/usr/bin/git --git-dir=/home/vicious/Dotfiles.git --work-tree=/home/vicious'
+export PATH="~/.emacs.d/bin:$PATH"
