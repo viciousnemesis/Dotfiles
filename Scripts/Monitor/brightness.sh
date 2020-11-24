@@ -96,6 +96,23 @@ setBrightness() {
   fi
   echo $brightness >> /sys/class/backlight/intel_backlight/brightness;       
   echo "Value:   $brightness";
+  #Percent displays a bit weird, since a few of the low settings round to 0%
+  #percent=$(calc "int($brightness/$maxBrightness*100)");
+  yad --scale \
+      --text 'Brightness' \
+      --text-align=center \
+      --timeout=1 \
+      --width=300 \
+      --max-value=$maxBrightness \
+      --no-buttons \
+      --undecorated \
+      --borders=10 \
+      --skip-taskbar \
+      --value=$brightness \
+      --posx=1600 \
+      --posy=1 \
+      --image=/usr/share/icons/Flat-Remix-Blue-Dark/actions/scalable/xfpm-brightness-lcd.svg \
+      /      
 }
 
 
@@ -138,19 +155,11 @@ elif [[ $1 =~ $reUp || $1 =~ $reDown ]] ; then
   ################	
   ### COMMANDS ###
   ################
-  #curStepFloat=$(calc "log($actualBrightness/$constant)/$exponent")
-  #curStep=$(calc "int($curStepFloat + $curStepFloat/abs($curStepFloat*2 || 1))");
-  #step=0; 
-  #val=$actualBrightness;
   if [[ $1 =~ $reUp ]] ; then
-    #step=1;
     val=$(stepUp);
   elif [[ $1 =~ $reDown ]] ; then
-    #step=-1;
     val=$(stepDown);
   fi
-  #val=$(calc "int($constant * (exp($exponent * ($curStep + $step))))");
-  #step=$(getStep);
   setBrightness $val;
   echo "Step: $(getStep $val) of ${#list[@]}";
 
