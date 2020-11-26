@@ -96,23 +96,31 @@ setBrightness() {
   fi
   echo $brightness >> /sys/class/backlight/intel_backlight/brightness;       
   echo "Value:   $brightness";
-  #Percent displays a bit weird, since a few of the low settings round to 0%
-  #percent=$(calc "int($brightness/$maxBrightness*100)");
   yad --scale \
-      --text 'Brightness' \
-      --text-align=center \
-      --timeout=1 \
-      --width=300 \
+      --borders=30 \
+      --geometry=410x100+1400+0 \
+      --image=/usr/share/icons/Flat-Remix-Blue-Dark/actions/scalable/xfpm-brightness-lcd.svg \
       --max-value=$maxBrightness \
       --no-buttons \
-      --undecorated \
-      --borders=10 \
+      --no-focus \
+      --print-partial \
       --skip-taskbar \
+      --text 'Brightness' \
+      --text-align=center \
+      --timeout=3 \
       --value=$brightness \
-      --posx=1600 \
-      --posy=1 \
-      --image=/usr/share/icons/Flat-Remix-Blue-Dark/actions/scalable/xfpm-brightness-lcd.svg \
-      /      
+      --undecorated \
+      --mark=0:1 \
+      --mark=2:$(calc "int(" $maxBrightness " * 0.2)") \
+      --mark=4:$(calc "int(" $maxBrightness " * 0.4)") \
+      --mark=6:$(calc "int(" $maxBrightness " * 0.6)") \
+      --mark=8:$(calc "int(" $maxBrightness " * 0.8)") \
+      --mark=10:$(calc "int(" $maxBrightness " * 1.0)") \
+      / | while read BrNew
+          do 
+	    echo $BrNew >> /sys/class/backlight/intel_backlight/brightness;       
+	    echo "Value:   $BrNew";
+          done
 }
 
 
