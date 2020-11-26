@@ -45,6 +45,7 @@ alias emdbg="emacsclient -c -a 'emacs --debug-init' "
 alias config='/usr/bin/git --git-dir=$HOME/Dotfiles --work-tree=$HOME'
 alias cfg_add='/usr/bin/git --git-dir=$HOME/Dotfiles --work-tree=$HOME add -u'
 alias cfg_commit='/usr/bin/git --git-dir=$HOME/Dotfiles --work-tree=$HOME commit'
+alias cfg_push='/usr/bin/git --git-dir=$HOME/Dotfiles --work-tree=$HOME push'
 alias cfg_reset='/usr/bin/git --git-dir=$HOME/Dotfiles --work-tree=$HOME reset'
 alias cfg_status='/usr/bin/git --git-dir=$HOME/Dotfiles --work-tree=$HOME status'
 
