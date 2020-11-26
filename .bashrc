@@ -112,3 +112,4 @@ if ! shopt -oq posix; then
   fi
 fi
 export PATH="~/.emacs.d/bin:$PATH"
+export EDITOR='vim'

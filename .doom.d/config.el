@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "Vicious"
+      user-mail-address "brutis88@gmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -25,7 +25,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-dark+)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -34,7 +34,6 @@
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
-
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -52,3 +51,30 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; HiDPI Mode: 
+;;https://emacs.stackexchange.com/questions/28390/quickly-adjusting-text-to-dpi-changes
+
+(setq font-family "monospace")
+ (if (equal (display-pixel-width) 3840)
+    (setq doom-font (font-spec :family font-family :size 20)
+          doom-big-font (font-spec :family font-family :size 30))
+  (setq doom-font (font-spec :family font-family :size 70)
+        doom-big-font (font-spec :family font-family :size 80)))
+
+(defun my/set-initial-frame ()
+  "Set initial frame size and position"
+    (set-frame-position (selected-frame) 1920 50)
+    (set-frame-size (selected-frame) 1920 2000 t))
+
+(my/set-initial-frame)
+
+  ;;  "Set initial frame size and position"
+;;(let ((frame (selected-frame))
+;;      (one-half-display-pixel-width (/ (display-pixel-width) 2)))
+;;  (set-frame-width frame one-half-display-pixel-width nil 'pixelwise)
+;;  (set-frame-position frame 0 0)))
+
+;;(my/set-initial-frame)
+;; (set-frame-position (selected-frame) 1920 50)
+;; (set-frame-size (selected-frame) 200 200)

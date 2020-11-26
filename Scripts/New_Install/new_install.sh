@@ -20,6 +20,10 @@ echo " General configuration commands..."
 echo "Dotfile Configuration setup..."
 ./Snippets/config_setup.sh
 
+#Config startup scripts
+echo "Startup script setup..."
+./Snippets/startup.sh
+
 #Cleanup
 echo "Cleaning up..."
 ./Snippets/update_upgrade.sh
