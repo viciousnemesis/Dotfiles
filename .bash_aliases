@@ -43,9 +43,10 @@ alias emdbg="emacsclient -c -a 'emacs --debug-init' "
 # GIT stuff
 # 'Config' for Dotfiles project 
 alias config='/usr/bin/git --git-dir=$HOME/Dotfiles --work-tree=$HOME'
-alias cfg_add='/usr/bin/git --git-dir=$HOME/Dotfiles --work-tree=$HOME add -u'
-alias cfg_commit='/usr/bin/git --git-dir=$HOME/Dotfiles --work-tree=$HOME commit'
+alias cfg_add='/usr/bin/git --git-dir=$HOME/Dotfiles --work-tree=$HOME add -fu'
+alias cfg_commit='/usr/bin/git --git-dir=$HOME/Dotfiles --work-tree=$HOME commit -m '
 alias cfg_push='/usr/bin/git --git-dir=$HOME/Dotfiles --work-tree=$HOME push'
+alias cfg_remote_prune_origin='/usr/bin/git --git-dir=$HOME/Dotfiles --work-tree=$HOME remote prune origin'
 alias cfg_reset='/usr/bin/git --git-dir=$HOME/Dotfiles --work-tree=$HOME reset'
 alias cfg_status='/usr/bin/git --git-dir=$HOME/Dotfiles --work-tree=$HOME status'
 
