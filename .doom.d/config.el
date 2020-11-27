@@ -57,15 +57,15 @@
 
 (setq font-family "monospace")
  (if (equal (display-pixel-width) 3840)
-    (setq doom-font (font-spec :family font-family :size 20)
-          doom-big-font (font-spec :family font-family :size 30))
+    (setq doom-font (font-spec :family font-family :size 25)
+          doom-big-font (font-spec :family font-family :size 35))
   (setq doom-font (font-spec :family font-family :size 70)
         doom-big-font (font-spec :family font-family :size 80)))
 
 (defun my/set-initial-frame ()
   "Set initial frame size and position"
     (set-frame-position (selected-frame) 1920 50)
-    (set-frame-size (selected-frame) 1920 2000 t))
+    (set-frame-size (selected-frame) 1850 2000 t))
 
 (my/set-initial-frame)
 

@@ -98,8 +98,8 @@ setBrightness() {
   echo "Value:   $brightness";
   yad --scale \
       --borders=30 \
-      --geometry=410x100+1400+0 \
-      --image=/usr/share/icons/Flat-Remix-Blue-Dark/actions/scalable/xfpm-brightness-lcd.svg \
+      --geometry=400x50+1520+0 \
+      --image=/home/vicious/Scripts/Monitor/icon.png \
       --max-value=$maxBrightness \
       --no-buttons \
       --no-focus \
