@@ -17,6 +17,7 @@ echo "Basic programs..."
 install curl
 install htop
 install nmap
+install software-properties-common
 install vim
 install vlc
 install wget

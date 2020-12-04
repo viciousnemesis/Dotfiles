@@ -1,0 +1,23 @@
+#!/bin/bash 
+
+GTKDIALOG=gtkdialog 
+export MAIN_DIALOG=' 
+
+<window title="My First Program" icon-name="gtk-about" resizable="true" width-request="300" height-request="310"> 
+
+<vbox> 
+	<hbox space-fill="true" space-expand="true"> 
+		<button>	 
+			<label>Welcome to TecMint.com Home!</label> 
+			<action>echo "Welcome to TecMint.com Home!"</action> 
+		</button> 
+	</hbox> 
+</vbox> 
+</window> 
+' 
+
+case $1 in 
+	-d | --dump) echo "$MAIN_DIALOG" ;; 
+	*) $GTKDIALOG --program=MAIN_DIALOG --center ;; 
+
+esac 
